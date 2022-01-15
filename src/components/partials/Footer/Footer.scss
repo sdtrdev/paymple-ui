@@ -1,0 +1,29 @@
+$this: 'footer';
+
+footer {
+  &.component.is-#{$this} {
+    background: #fff;
+    padding: 1rem;
+    .#{$this}--columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      &__item {
+        &.is-logo {
+          span {
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            border: solid 1px #000;
+          }
+        }
+        &.is-actions {
+          button {
+            margin: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

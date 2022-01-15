@@ -1,0 +1,35 @@
+$this: 'content-item';
+
+section {
+  &.component.is-#{$this} {
+    background: #fff;
+    color: #000;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .#{$this}--columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      &.is-right {
+        flex-direction: row-reverse;
+      }
+      &__item {
+        width: 50%;
+        &.is-content {
+          padding: 1rem;
+        }
+        &.is-banner {
+          padding: 1rem;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
