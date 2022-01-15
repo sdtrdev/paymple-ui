@@ -6,6 +6,7 @@ import Home from './Home';
 
 const About = lazy(() => import('./About'));
 const Profile = lazy(() => import('./Profile'));
+const ProfileEdit = lazy(() => import('./Profile/Edit'));
 
 const Router: FunctionComponent = function () {
   return (
@@ -16,6 +17,14 @@ const Router: FunctionComponent = function () {
         element={
           <Suspense fallback={<Spin />}>
             <Profile />
+          </Suspense>
+        }
+      />
+      <Route
+        path="profile/edit"
+        element={
+          <Suspense fallback={<Spin />}>
+            <ProfileEdit />
           </Suspense>
         }
       />
