@@ -3,6 +3,7 @@ import SiteHeader from '../../components/Shareds/SiteHeader';
 import HomeBanner from '../../components/Partials/Home/Banner';
 import HomeProfiles from '../../components/Partials/Home/Profiles';
 import Content from '../../components/Partials/Home/Content';
+import SiteFooter from '../../components/Shareds/SiteFooter';
 
 const Home = function () {
   return (
@@ -80,6 +81,7 @@ const Home = function () {
         }
       />
       <HomeProfiles />
+      <SiteFooter />
     </div>
   );
 };
