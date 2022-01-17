@@ -3,6 +3,7 @@ $this: 'home-profiles';
 section {
   &.component.is-#{$this} {
     padding: 4rem 0;
+    background: #fff;
     .#{$this}--columns {
       display: flex;
       flex-wrap: wrap;
