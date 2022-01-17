@@ -1,9 +1,10 @@
 import React from 'react';
+import SiteHeader from '../../components/Shareds/SiteHeader';
 
 const Home = function () {
   return (
     <div className="Home">
-      <p>Home Works!</p>
+      <SiteHeader />
     </div>
   );
 };
