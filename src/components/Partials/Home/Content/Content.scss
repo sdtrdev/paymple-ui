@@ -38,11 +38,11 @@ section {
             background-size: contain;
             &.is-left {
               left: 0;
-              background-position: top left;
+              background-position: left -1px top;
             }
             &.is-right {
               right: 0;
-              background-position: top right;
+              background-position: right -1px top;
             }
           }
         }
