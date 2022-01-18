@@ -3,6 +3,25 @@ $this: 'header';
 header {
   &.component.is-#{$this} {
     padding: 0.5rem 0;
+    transition: transform 0.225s linear;
+    width: 100%;
+    transform: translateY(0);
+    background-color: #202124aa;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+
+    &.is {
+      &-absolute {
+        position: absolute;
+        transform: translateY(-100%);
+      }
+
+      &-fixed {
+        position: fixed;
+        transform: translateY(0);
+      }
+    }
+
     .#{$this}--columns {
       display: flex;
       flex-wrap: wrap;
@@ -10,24 +29,29 @@ header {
       align-items: center;
       margin: 0 -1rem;
       padding: 0 0.5rem;
+
       &__item {
         padding: 0.5rem;
+
         &.is-logo {
           a {
             display: block;
             color: #f2d57e;
           }
+
           svg {
             display: block;
             height: 1.25rem;
             width: auto;
           }
         }
+
         &.is-actions {
           display: flex;
           flex-wrap: wrap;
           padding-left: 0;
           padding-right: 0;
+
           a {
             display: block;
             margin: 0 0.5rem;

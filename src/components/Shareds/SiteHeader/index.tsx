@@ -1,11 +1,40 @@
+import React, { useEffect, useState } from 'react';
 import { Button } from 'antd';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './SiteHeader.scss';
 
-const Header = function () {
+type ScrollDirection = 'top' | 'down';
+type HeaderPosition = 'absolute' | 'fixed';
+
+const Header = () => {
+  const [headerPos, setHeaderPos] = useState<HeaderPosition>('absolute');
+  const [lastScroll, setLastScroll] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState<ScrollDirection>('top');
+
+  useEffect(() => {
+    const toggleHeader = () => {
+      setLastScroll(window.scrollY);
+      setScrollDirection(window.scrollY > lastScroll ? 'down' : 'top');
+      setLastScroll(window.scrollY);
+    };
+
+    window.addEventListener('scroll', toggleHeader);
+
+    return () => {
+      window.removeEventListener('scroll', toggleHeader);
+    };
+  }, [lastScroll]);
+
+  useEffect(() => {
+    if (scrollDirection === 'top') {
+      setHeaderPos('fixed');
+    } else {
+      setHeaderPos('absolute');
+    }
+  }, [scrollDirection]);
+
   return (
-    <header className="component is-header">
+    <header className={`component is-header is-${headerPos}`}>
       <div className="container header--container">
         <div className="header--columns">
           <div className="header--columns__item is-logo">
