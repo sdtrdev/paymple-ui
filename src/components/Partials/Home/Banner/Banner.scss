@@ -1,0 +1,36 @@
+$this: 'home-banner';
+
+section {
+  &.component.is-#{$this} {
+    @media (min-width: 1200px) {
+      height: 80vh;
+    }
+    .#{$this}--bg {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .#{$this}--overlay {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .#{$this}--content {
+      padding: 4rem 0;
+      max-width: 40rem;
+      color: #fff;
+      h1 {
+        font-weight: 700;
+        color: #fff;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

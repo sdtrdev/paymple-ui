@@ -1,0 +1,88 @@
+$this: 'home-content';
+
+section {
+  &.component.is-#{$this} {
+    .#{$this}--columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      &.is-right {
+        flex-direction: row-reverse;
+      }
+      &__item {
+        width: 100%;
+        @media (min-width: 640px) {
+          width: 50%;
+        }
+        &.is-content {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          justify-content: center;
+          padding: 1rem 4rem;
+        }
+        &.is-banner {
+          position: relative;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+          .banner-triangle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            width: 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            &.is-left {
+              left: 0;
+              background-position: left -1px top;
+            }
+            &.is-right {
+              right: 0;
+              background-position: right -1px top;
+            }
+          }
+        }
+      }
+    }
+    &.is-light {
+      background: #f0f0eb;
+      color: #000;
+      .#{$this}--columns {
+        &__item {
+          &.is-banner {
+            .banner-triangle {
+              &.is-left {
+                background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 360'%3E%3Cpath d='M72 0H0v360L72 0Z' fill='%23F0F0EB' /%3E%3C/svg%3E");
+              }
+              &.is-right {
+                background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 360'%3E%3Cpath d='M72 0 0 360h72V0Z' fill='%23F0F0EB'/%3E%3C/svg%3E");
+              }
+            }
+          }
+        }
+      }
+    }
+    &.is-dark {
+      background: #202124;
+      color: #bdc1c6;
+      .#{$this}--columns {
+        &__item {
+          &.is-banner {
+            .banner-triangle {
+              &.is-left {
+                background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 360'%3E%3Cpath d='M72 0H0v360L72 0Z' fill='%23202124' /%3E%3C/svg%3E");
+              }
+              &.is-right {
+                background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 360'%3E%3Cpath d='M72 0 0 360h72V0Z' fill='%23202124'/%3E%3C/svg%3E");
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
