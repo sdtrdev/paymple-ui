@@ -19,11 +19,17 @@ const Footer = () => (
         </div>
 
         <div className="footer--columns__item is-actions">
-          <Link to="/">
+          <Link to="/documentation">
+            <Button type="text">Documentation</Button>
+          </Link>
+          <Link to="/documentation/privacy-policy">
+            <Button type="text">Privacy Policy</Button>
+          </Link>
+          <Link to="/documentation/terms-of-use">
             <Button type="text">Terms of Use</Button>
           </Link>
-          <Link to="/">
-            <Button type="text">Privacy Policy</Button>
+          <Link to="/documentation/cookie-policy">
+            <Button type="text">Cookie Policy</Button>
           </Link>
         </div>
       </div>

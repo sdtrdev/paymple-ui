@@ -1,0 +1,19 @@
+.logo {
+  float: left;
+  margin: 0 24px 0 0;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #f2d57e;
+  svg {
+    display: block;
+    height: 1.25rem;
+    width: auto;
+  }
+}
+
+.site-layout-background {
+  background: #fff;
+  color: #000;
+}

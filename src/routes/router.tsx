@@ -5,21 +5,65 @@ import { Spin } from 'antd';
 import Home from './Home';
 
 const About = lazy(() => import('./About'));
+const Documentation = lazy(() => import('./Documentation'));
+const DocumentationStart = lazy(() => import('./Documentation/Start'));
+const DocumentationPrivacyPolicy = lazy(() => import('./Documentation/PrivacyPolicy'));
+const DocumentationTermsOfUse = lazy(() => import('./Documentation/TermsOfUse'));
+const DocumentationCookiePolicy = lazy(() => import('./Documentation/CookiePolicy'));
 
-const Router: FunctionComponent = function () {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
+const Router: FunctionComponent = () => (
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route
+      path="documentation"
+      element={
+        <Suspense fallback={<Spin />}>
+          <Documentation />
+        </Suspense>
+      }
+    >
       <Route
-        path="about"
+        path=""
         element={
           <Suspense fallback={<Spin />}>
-            <About />
+            <DocumentationStart />
           </Suspense>
         }
       />
-    </Routes>
-  );
-};
+      <Route
+        path="privacy-policy"
+        element={
+          <Suspense fallback={<Spin />}>
+            <DocumentationPrivacyPolicy />
+          </Suspense>
+        }
+      />
+      <Route
+        path="terms-of-use"
+        element={
+          <Suspense fallback={<Spin />}>
+            <DocumentationTermsOfUse />
+          </Suspense>
+        }
+      />
+      <Route
+        path="cookie-policy"
+        element={
+          <Suspense fallback={<Spin />}>
+            <DocumentationCookiePolicy />
+          </Suspense>
+        }
+      />
+    </Route>
+    <Route
+      path="about"
+      element={
+        <Suspense fallback={<Spin />}>
+          <About />
+        </Suspense>
+      }
+    />
+  </Routes>
+);
 
 export default Router;
