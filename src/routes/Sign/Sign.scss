@@ -1,0 +1,36 @@
+$this: 'sign';
+
+main {
+  &.route.is-#{$this} {
+    .#{$this}--bg {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url('../../../public/sign--bg.jpg');
+      background-attachment: fixed;
+    }
+    .#{$this}--overlay {
+      background: rgba(0, 0, 0, 0.75);
+    }
+    .#{$this}--wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .#{$this}--content {
+      width: 26rem;
+      max-width: 100%;
+      &__outlet {
+        padding: 1rem 0.5rem;
+
+        background: rgba(255, 255, 255, 0.66);
+        border-radius: 0.25rem;
+        box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(0.5rem);
+        -webkit-backdrop-filter: blur(0.5rem);
+      }
+    }
+  }
+}
