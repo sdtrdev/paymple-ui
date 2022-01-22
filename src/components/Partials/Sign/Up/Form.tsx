@@ -4,7 +4,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './Form.scss';
 import { Link } from 'react-router-dom';
 
-const SignInForm = () => {
+const SignUpForm = () => {
   const onFinish = (values: any) => {
     // TODO: Real logic
     console.log('Success:', values);
@@ -16,7 +16,7 @@ const SignInForm = () => {
   };
 
   return (
-    <section className="component is-sign-in-form">
+    <section className="component is-sign-up-form">
       <Form
         name="normal_login"
         className="login-form"
@@ -29,6 +29,16 @@ const SignInForm = () => {
           rules={[{ required: true, message: 'Please input your Username!' }]}
         >
           <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+        </Form.Item>
+        <Form.Item
+          name="email"
+          rules={[{ type: 'email', required: true, message: 'Please input your email!' }]}
+        >
+          <Input
+            type="email"
+            prefix={<UserOutlined className="site-form-item-icon" />}
+            placeholder="Email"
+          />
         </Form.Item>
         <Form.Item
           name="password"
@@ -52,13 +62,13 @@ const SignInForm = () => {
 
         <Form.Item>
           <Button type="primary" htmlType="submit" className="login-form-button">
-            Sign In
+            Sign Up
           </Button>
-          Or <Link to="/sign/up">sign up now!</Link>
+          Or <Link to="/sign/in">sign in now!</Link>
         </Form.Item>
       </Form>
     </section>
   );
 };
 
-export default SignInForm;
+export default SignUpForm;

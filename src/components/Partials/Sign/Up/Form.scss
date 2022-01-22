@@ -1,0 +1,10 @@
+$this: 'sign-up-form';
+
+section {
+  &.component.is-#{$this} {
+    .login-form-button {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

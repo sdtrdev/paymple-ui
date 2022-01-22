@@ -12,6 +12,7 @@ const DocumentationTermsOfUse = lazy(() => import('./Documentation/TermsOfUse'))
 const DocumentationCookiePolicy = lazy(() => import('./Documentation/CookiePolicy'));
 const Sign = lazy(() => import('./Sign'));
 const SignIn = lazy(() => import('./Sign/In'));
+const SignUp = lazy(() => import('./Sign/Up'));
 
 const Router: FunctionComponent = () => (
   <Routes>
@@ -73,14 +74,14 @@ const Router: FunctionComponent = () => (
           </Suspense>
         }
       />
-      {/* <Route
-        path="out"
+      <Route
+        path="up"
         element={
           <Suspense fallback={<Spin />}>
-            <DocumentationTermsOfUse />
+            <SignUp />
           </Suspense>
         }
-      /> */}
+      />
     </Route>
     <Route
       path="about"
