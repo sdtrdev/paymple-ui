@@ -2,6 +2,7 @@ $this: 'sign';
 
 main {
   &.route.is-#{$this} {
+    position: relative;
     .#{$this}--bg {
       background-repeat: no-repeat;
       background-size: cover;
@@ -22,10 +23,29 @@ main {
     .#{$this}--content {
       width: 26rem;
       max-width: 100%;
+      &__action {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+      }
+      &__logo {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        a {
+          display: block;
+          color: #f2d57e;
+          svg {
+            display: block;
+            height: 1.5rem;
+            width: auto;
+          }
+        }
+      }
       &__outlet {
         padding: 1rem 0.5rem;
 
-        background: rgba(255, 255, 255, 0.66);
+        background: rgba(255, 255, 255, 0.65);
         border-radius: 0.25rem;
         box-shadow: 0 0.25rem 2rem rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(0.5rem);
