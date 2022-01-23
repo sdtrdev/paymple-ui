@@ -16,7 +16,7 @@ const HomeBanner = function () {
                 assumenda corporis temporibus odit laborum dicta placeat perferendis nesciunt!
                 Neque, nemo harum. Esse magni perspiciatis sunt. Odio, quas vitae.
               </p>
-              <Link to="/">
+              <Link to="/sign/up">
                 <Button type="primary" shape="round" size="large">
                   Apply Now!
                 </Button>

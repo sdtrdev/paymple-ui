@@ -10,6 +10,9 @@ const DocumentationStart = lazy(() => import('./Documentation/Start'));
 const DocumentationPrivacyPolicy = lazy(() => import('./Documentation/PrivacyPolicy'));
 const DocumentationTermsOfUse = lazy(() => import('./Documentation/TermsOfUse'));
 const DocumentationCookiePolicy = lazy(() => import('./Documentation/CookiePolicy'));
+const Sign = lazy(() => import('./Sign'));
+const SignIn = lazy(() => import('./Sign/In'));
+const SignUp = lazy(() => import('./Sign/Up'));
 
 const Router: FunctionComponent = () => (
   <Routes>
@@ -51,6 +54,31 @@ const Router: FunctionComponent = () => (
         element={
           <Suspense fallback={<Spin />}>
             <DocumentationCookiePolicy />
+          </Suspense>
+        }
+      />
+    </Route>
+    <Route
+      path="sign"
+      element={
+        <Suspense fallback={<Spin />}>
+          <Sign />
+        </Suspense>
+      }
+    >
+      <Route
+        path="in"
+        element={
+          <Suspense fallback={<Spin />}>
+            <SignIn />
+          </Suspense>
+        }
+      />
+      <Route
+        path="up"
+        element={
+          <Suspense fallback={<Spin />}>
+            <SignUp />
           </Suspense>
         }
       />

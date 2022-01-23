@@ -49,12 +49,12 @@ const Header = () => {
           </div>
 
           <div className="header--columns__item is-actions">
-            <Link to="/">
+            <Link to="/sign/in">
               <Button type="primary" shape="round" size="large">
                 Sign In
               </Button>
             </Link>
-            <Link to="/">
+            <Link to="/sign/up">
               <Button type="primary" shape="round" size="large">
                 Sign Up
               </Button>
